@@ -7,7 +7,12 @@ export const BookmarkItem = ({ name, url }: Bookmark) => {
 
   return (
     <div className="flex shadow-md rounded-md mb-4 items-center">
-      <a className="grow p-4" href={url} target="_blank" rel="noopener">
+      <a
+        className="grow p-4 hover:text-blue-600 transition-all"
+        href={url}
+        target="_blank"
+        rel="noopener"
+      >
         {name}
       </a>
       <div className="mr-4 flex gap-2">
