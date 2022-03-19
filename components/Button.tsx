@@ -4,6 +4,7 @@ interface ButtonProps {
   children: ReactNode;
   onClick: MouseEventHandler<HTMLButtonElement>;
   variant?: "primary" | "secondary" | "danger";
+  className?: string;
 }
 
 const bgColors = {
@@ -16,10 +17,11 @@ export const Button = ({
   children,
   variant = "secondary",
   onClick,
+  className,
 }: ButtonProps) => {
   return (
     <button
-      className={`py-2 px-3 rounded-md active:scale-95 transition-all ${bgColors[variant]}`}
+      className={`py-1 px-3 rounded-md active:scale-95 transition-all ${bgColors[variant]} ${className}`}
       onClick={onClick}
     >
       {children}
