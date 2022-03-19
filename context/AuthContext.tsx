@@ -8,7 +8,7 @@ interface ContextProviderProps {
   children: ReactNode;
 }
 
-export const ContextProvider = ({ children }: ContextProviderProps) => {
+export const AuthContextProvider = ({ children }: ContextProviderProps) => {
   return <Context.Provider value={useAuth()}>{children}</Context.Provider>;
 };
 
