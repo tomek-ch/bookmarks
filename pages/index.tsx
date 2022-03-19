@@ -9,7 +9,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ bookmarks }) => {
   return (
     <>
-      <h1 className="text-xl my-5">Your bookmarks:</h1>
+      <h1 className="text-xl mb-4">Your bookmarks:</h1>
       {bookmarks.map((item) => (
         <BookmarkItem key={item.id} {...item} />
       ))}
