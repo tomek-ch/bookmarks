@@ -3,9 +3,10 @@ import { Button } from "./Button";
 
 export const UserNav = () => {
   const { currentUser, signOut, signIn, signUp } = useAuthContext();
+
   if (currentUser) {
     return (
-      <div>
+      <div className="flex items-center gap-3">
         Hello, {currentUser.name}
         <nav>
           <Button onClick={signOut}>Sign out</Button>
