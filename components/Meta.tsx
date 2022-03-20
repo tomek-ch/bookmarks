@@ -13,7 +13,7 @@ export const Meta = ({
     <Head>
       <title>{title} | Bookmarks</title>
       <meta name="description" content={description} />
-      <link rel="icon" href="/favicon.svg" />
+      <link rel="icon" href="/bookmark.svg" />
     </Head>
   );
 };
