@@ -1,13 +1,15 @@
+import Link from "next/link";
 import { MouseEventHandler, ReactNode } from "react";
 
-interface ButtonProps {
+type ButtonProps = {
   children: ReactNode;
-  onClick: MouseEventHandler<HTMLButtonElement>;
   variant?: "primary" | "secondary" | "danger";
   className?: string;
-}
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  to?: string;
+};
 
-const bgColors = {
+const styles = {
   primary: "bg-blue-500 text-white hover:bg-blue-600",
   secondary: "border-solid border-[1px] border-gray-300 hover:border-gray-400",
   danger: "",
@@ -17,13 +19,25 @@ export const Button = ({
   children,
   variant = "secondary",
   onClick,
-  className,
+  to,
+  className = "",
 }: ButtonProps) => {
+  const style = `
+    block py-1 px-3 rounded-md active:scale-95 transition-all
+    ${styles[variant]}
+    ${className}
+  `;
+
+  if (to) {
+    return (
+      <Link href={to}>
+        <a className={style}>{children}</a>
+      </Link>
+    );
+  }
+
   return (
-    <button
-      className={`py-1 px-3 rounded-md active:scale-95 transition-all ${bgColors[variant]} ${className}`}
-      onClick={onClick}
-    >
+    <button className={style} onClick={onClick}>
       {children}
     </button>
   );

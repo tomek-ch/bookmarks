@@ -16,11 +16,9 @@ export const UserNav = () => {
   }
 
   return (
-    <nav>
-      <Button onClick={signIn} className="mr-2">
-        Sign in
-      </Button>
-      <Button onClick={signUp} variant="primary">
+    <nav className="flex gap-2">
+      <Button to="/login">Sign in</Button>
+      <Button to="/register" variant="primary">
         Sign up
       </Button>
     </nav>
