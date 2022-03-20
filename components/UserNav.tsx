@@ -17,7 +17,7 @@ export const UserNav = () => {
 
   return (
     <nav className="flex gap-2">
-      <Button to="/login">Sign in</Button>
+      <Button to="/log-in">Sign in</Button>
       <Button to="/register" variant="primary">
         Sign up
       </Button>
