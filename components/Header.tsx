@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header className="py-3 items-center flex justify-between">
       <Link href="/">
-        <a>
+        <a className="block hover:text-blue-600 active:scale-95 transition-all">
           <h1 className="flex gap-1 items-center">
             <BookMarkIcon />
             Bookmarks
