@@ -1,5 +1,5 @@
 import { useAuthContext } from "../../context/AuthContext";
-import { Button } from "../common/Button";
+import { Button } from "../common/buttons/Button";
 
 export const UserNav = () => {
   const { currentUser, signOut } = useAuthContext();

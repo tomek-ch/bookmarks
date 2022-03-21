@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import React from "react";
 import { object, string } from "yup";
-import { Button } from "../common/Button";
+import { Button } from "../common/buttons/Button";
 import { InputField } from "../common/InputField";
 
 export const LogInForm = () => (
