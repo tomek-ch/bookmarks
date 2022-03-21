@@ -1,15 +1,14 @@
+import { Form, Formik } from "formik";
 import React from "react";
-import { Formik, Form } from "formik";
 import { object, string } from "yup";
-import { Button } from "./Button";
-import { InputField } from "./InputField";
+import { Button } from "../common/Button";
+import { InputField } from "../common/InputField";
 
-export const RegisterForm = () => (
+export const LogInForm = () => (
   <div>
     <Formik
-      initialValues={{ name: "", email: "", password: "" }}
+      initialValues={{ email: "", password: "" }}
       validationSchema={object({
-        name: string().required("Please enter your name"),
         email: string()
           .required("Please enter your email address")
           .email("Invalid email address"),
@@ -22,11 +21,10 @@ export const RegisterForm = () => (
     >
       {({ isSubmitting }) => (
         <Form className="flex flex-col gap-3 items-start">
-          <InputField name="name" label="Name" />
           <InputField type="email" name="email" label="Email" />
           <InputField type="password" name="password" label="Password" />
           <Button variant="primary" disabled={isSubmitting}>
-            Sign up
+            Sign in
           </Button>
         </Form>
       )}

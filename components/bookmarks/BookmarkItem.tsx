@@ -1,5 +1,5 @@
-import { Bookmark } from "../types/Bookmark";
-import { Button } from "./Button";
+import { Bookmark } from "../../types/Bookmark";
+import { Button } from "../common/Button";
 
 export const BookmarkItem = ({ name, url }: Bookmark) => {
   const edit = () => {};

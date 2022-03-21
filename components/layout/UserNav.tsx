@@ -1,8 +1,8 @@
-import { useAuthContext } from "../context/AuthContext";
-import { Button } from "./Button";
+import { useAuthContext } from "../../context/AuthContext";
+import { Button } from "../common/Button";
 
 export const UserNav = () => {
-  const { currentUser, signOut, signIn, signUp } = useAuthContext();
+  const { currentUser, signOut } = useAuthContext();
 
   if (currentUser) {
     return (

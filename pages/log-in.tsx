@@ -1,6 +1,6 @@
-import { LogInForm } from "../components/LogInForm";
-import { InlineLink } from "../components/InlineLink";
-import { Meta } from "../components/Meta";
+import { LogInForm } from "../components/auth/LogInForm";
+import { InlineLink } from "../components/common/InlineLink";
+import { Meta } from "../components/common/Meta";
 
 const LogIn = () => {
   return (

@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { BookmarkItem } from "../components/BookmarkItem";
+import { BookmarkItem } from "../components/bookmarks/BookmarkItem";
 import { Bookmark } from "../types/Bookmark";
 
 interface HomeProps {

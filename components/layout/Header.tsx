@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BookMarkIcon } from "./BookMarkIcon";
-import { UserNav } from "./UserNav";
+import { BookMarkIcon } from "../icons/BookMarkIcon";
+import { UserNav } from "../layout/UserNav";
 
 export const Header = () => {
   return (

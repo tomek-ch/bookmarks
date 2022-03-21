@@ -1,6 +1,6 @@
-import { InlineLink } from "../components/InlineLink";
-import { Meta } from "../components/Meta";
-import { RegisterForm } from "../components/RegisterForm";
+import { InlineLink } from "../components/common/InlineLink";
+import { Meta } from "../components/common/Meta";
+import { RegisterForm } from "../components/auth/RegisterForm";
 
 const Register = () => {
   return (
