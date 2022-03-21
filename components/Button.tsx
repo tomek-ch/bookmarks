@@ -7,6 +7,7 @@ type ButtonProps = {
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   to?: string;
+  disabled?: boolean;
 };
 
 const styles = {
@@ -21,6 +22,7 @@ export const Button = ({
   onClick,
   to,
   className = "",
+  disabled,
 }: ButtonProps) => {
   const style = `
     block py-1 px-3 rounded-md active:scale-95 transition-all
@@ -37,7 +39,7 @@ export const Button = ({
   }
 
   return (
-    <button className={style} onClick={onClick}>
+    <button className={style} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
