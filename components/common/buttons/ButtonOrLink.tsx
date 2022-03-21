@@ -1,13 +1,5 @@
 import Link from "next/link";
-import { MouseEventHandler, ReactNode } from "react";
-
-type ButtonProps = {
-  children: ReactNode;
-  className: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  to?: string;
-  disabled?: boolean;
-};
+import { ButtonOrLinkProps } from "./ButtonOrLinkProps";
 
 export const ButtonOrLink = ({
   children,
@@ -15,7 +7,7 @@ export const ButtonOrLink = ({
   to,
   className = "",
   disabled,
-}: ButtonProps) => {
+}: ButtonOrLinkProps) => {
   if (to) {
     return (
       <Link href={to}>
