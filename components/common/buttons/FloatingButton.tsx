@@ -6,7 +6,8 @@ export const FloatingButton = (props: ButtonOrLinkProps) => {
     <Button
       variant="primary"
       className={`
-      fixed bottom-4 left-[calc(100%-(28rem/2))]
+      fixed bottom-4
+      right-[calc((100%-min(100%,28rem))/2+1rem)] 
       flex items-center justify-center
       shadow-md !rounded-full w-10 h-10
       `}
