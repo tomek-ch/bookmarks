@@ -8,7 +8,7 @@ interface InputFieldProps {
 
 export const InputField = ({ type = "text", name, label }: InputFieldProps) => {
   return (
-    <div>
+    <div className="w-full">
       <label>
         {label}
         <Field
