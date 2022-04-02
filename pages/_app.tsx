@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthContextProvider>
       <Meta />
-      <div className="max-w-md mx-auto">
+      <div className="px-4 max-w-md mx-auto">
         <Header />
         <Component {...pageProps} />
       </div>
