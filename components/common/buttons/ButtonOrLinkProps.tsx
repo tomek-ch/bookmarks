@@ -6,4 +6,5 @@ export interface ButtonOrLinkProps {
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   to?: string;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }

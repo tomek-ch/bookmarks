@@ -25,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ bookmarks }) => {
         <PlusIcon className="scale-150" />
       </FloatingButton>
       <Modal {...modal}>
-        <BookmarkForm onSubmit={create} />
+        <BookmarkForm cancel={modal.toggle} onSubmit={create} />
       </Modal>
     </div>
   );

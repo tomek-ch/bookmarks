@@ -7,6 +7,7 @@ export const ButtonOrLink = ({
   to,
   className = "",
   disabled,
+  type = "button",
 }: ButtonOrLinkProps) => {
   if (to) {
     return (
@@ -17,7 +18,12 @@ export const ButtonOrLink = ({
   }
 
   return (
-    <button className={className} onClick={onClick} disabled={disabled}>
+    <button
+      className={className}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    >
       {children}
     </button>
   );

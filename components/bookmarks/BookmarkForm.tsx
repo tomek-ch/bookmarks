@@ -5,11 +5,13 @@ import { InputField } from "../common/InputField";
 interface BookmarkFormProps {
   initailData?: { name: string; url: string };
   onSubmit: (data: { name: string; url: string }) => void;
+  cancel: () => void;
 }
 
 export const BookmarkForm = ({
   initailData = { name: "", url: "" },
   onSubmit,
+  cancel,
 }: BookmarkFormProps) => {
   return (
     <Formik initialValues={initailData} onSubmit={onSubmit}>
@@ -17,9 +19,14 @@ export const BookmarkForm = ({
         <Form className="flex flex-col gap-3 items-start">
           <InputField name="name" label="Bookmark name" autoFocus />
           <InputField name="url" label="Url" />
-          <Button variant="primary" disabled={isSubmitting}>
-            Save
-          </Button>
+          <div className="flex w-full justify-end gap-2">
+            <Button type="button" onClick={cancel} disabled={isSubmitting}>
+              Cancel
+            </Button>
+            <Button variant="primary" disabled={isSubmitting}>
+              Save
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
