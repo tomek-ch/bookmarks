@@ -21,7 +21,7 @@ export const RegisterForm = () => (
   >
     {({ isSubmitting }) => (
       <Form className="flex flex-col gap-3 items-start">
-        <InputField name="name" label="Name" />
+        <InputField name="name" label="Name" autoFocus />
         <InputField type="email" name="email" label="Email" />
         <InputField type="password" name="password" label="Password" />
         <Button variant="primary" disabled={isSubmitting}>

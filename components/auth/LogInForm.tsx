@@ -20,7 +20,7 @@ export const LogInForm = () => (
   >
     {({ isSubmitting }) => (
       <Form className="flex flex-col gap-3 items-start">
-        <InputField type="email" name="email" label="Email" />
+        <InputField type="email" name="email" label="Email" autoFocus />
         <InputField type="password" name="password" label="Password" />
         <Button variant="primary" disabled={isSubmitting}>
           Sign in
