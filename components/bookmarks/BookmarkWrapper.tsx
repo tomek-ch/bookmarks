@@ -19,7 +19,7 @@ export const BookmarkWrapper = ({ bookmark }: BookmarkWrapperProps) => {
       <Modal {...modal}>
         <BookmarkForm
           cancel={modal.toggle}
-          initailData={bookmark}
+          initialData={bookmark}
           onSubmit={update}
         />
       </Modal>
