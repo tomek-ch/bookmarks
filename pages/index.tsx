@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { BookmarkForm } from "../components/bookmarks/BookmarkForm";
-import { BookmarkItem } from "../components/bookmarks/BookmarkItem";
 import { BookmarkWrapper } from "../components/bookmarks/BookmarkWrapper";
 import { FloatingButton } from "../components/common/buttons/FloatingButton";
 import { PlusIcon } from "../components/icons/PlusIcon";
