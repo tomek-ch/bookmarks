@@ -26,7 +26,9 @@ module.exports = {
       },
       animation: {
         "fade-in": "fade-in 150ms",
+        "fade-out": "fade-out 150ms",
         "pop-up": "pop-up 150ms",
+        hide: "hide 150ms",
       },
     },
   },

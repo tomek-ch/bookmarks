@@ -1,28 +1,51 @@
 import { ReactNode } from "react";
+import { useModal } from "../hooks/useModal";
 
-interface ModalProps {
+type ModalProps = {
   children: ReactNode;
-  toggle: () => void;
-}
+} & ReturnType<typeof useModal>;
 
-export const Modal = ({ children, toggle }: ModalProps) => {
-  return (
-    <>
-      <div
-        onClick={toggle}
-        className="fixed inset-0 bg-black/70 w-full animate-fade-in"
-      />
-      <div className="fixed p-2 w-full max-w-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+export const Modal = ({
+  children,
+  toggle,
+  isOpen,
+  isExiting,
+  finishExit,
+}: ModalProps) => {
+  if (isOpen || isExiting) {
+    return (
+      <>
+        <div
+          onClick={toggle}
+          className={`fixed inset-0 bg-black/70 w-full ${
+            isExiting ? "animate-fade-out" : "animate-fade-in"
+          }`}
+          onAnimationEnd={({ animationName }) => {
+            if (animationName === "fade-out") {
+              finishExit();
+            }
+          }}
+        />
         <div
           className="
-          animate-pop-up
-          p-4 bg-white w-full
-          rounded-md shadow-md
+          fixed p-2 w-full max-w-md
+          top-1/2 left-1/2
+          -translate-x-1/2 -translate-y-1/2
           "
         >
-          {children}
+          <div
+            className={`
+            ${isExiting ? "animate-hide" : "animate-pop-up"}
+            p-4 bg-white w-full
+            rounded-md shadow-md
+            `}
+          >
+            {children}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
+
+  return null;
 };

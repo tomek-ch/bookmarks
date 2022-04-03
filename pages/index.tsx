@@ -11,17 +11,17 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ bookmarks }) => {
-  const { isOpen, toggle } = useModal();
+  const modal = useModal();
   return (
     <div className="pb-8">
       <h1 className="text-xl mb-4">Your bookmarks:</h1>
       {bookmarks.map((item) => (
         <BookmarkItem key={item.id} {...item} />
       ))}
-      <FloatingButton onClick={toggle}>
+      <FloatingButton onClick={modal.toggle}>
         <PlusIcon className="scale-150" />
       </FloatingButton>
-      {isOpen && <Modal toggle={toggle}>HELLO</Modal>}
+      <Modal {...modal}>HELLO</Modal>
     </div>
   );
 };
