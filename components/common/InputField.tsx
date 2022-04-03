@@ -2,11 +2,17 @@ import { ErrorMessage, Field } from "formik";
 
 interface InputFieldProps {
   type?: string;
+  autoFocus?: boolean;
   name: string;
   label: string;
 }
 
-export const InputField = ({ type = "text", name, label }: InputFieldProps) => {
+export const InputField = ({
+  type = "text",
+  name,
+  label,
+  autoFocus,
+}: InputFieldProps) => {
   return (
     <div className="w-full">
       <label>
@@ -14,6 +20,7 @@ export const InputField = ({ type = "text", name, label }: InputFieldProps) => {
         <Field
           type={type}
           name={name}
+          autoFocus={autoFocus}
           className={`
             block mt-1 w-full p-3 leading-4 rounded-md bg-gray-200 outline-none
             hover:bg-gray-300 transition-all

@@ -1,10 +1,17 @@
 import { Bookmark } from "../../types/Bookmark";
 import { Button } from "../common/buttons/Button";
 
-export const BookmarkItem = ({ name, url }: Bookmark) => {
-  const edit = () => {};
-  const remove = () => {};
+interface BookmarkItemProps {
+  bookmark: Bookmark;
+  edit: () => void;
+  remove: () => void;
+}
 
+export const BookmarkItem = ({
+  bookmark: { name, url },
+  edit,
+  remove,
+}: BookmarkItemProps) => {
   return (
     <div className="flex shadow-md rounded-md mb-4 items-center">
       <a

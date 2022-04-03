@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
+import { BookmarkForm } from "../components/bookmarks/BookmarkForm";
 import { BookmarkItem } from "../components/bookmarks/BookmarkItem";
+import { BookmarkWrapper } from "../components/bookmarks/BookmarkWrapper";
 import { FloatingButton } from "../components/common/buttons/FloatingButton";
 import { PlusIcon } from "../components/icons/PlusIcon";
 import { Modal } from "../components/Modal";
@@ -12,16 +14,19 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ bookmarks }) => {
   const modal = useModal();
+  const create = () => {};
   return (
     <div className="pb-8">
       <h1 className="text-xl mb-4">Your bookmarks:</h1>
       {bookmarks.map((item) => (
-        <BookmarkItem key={item.id} {...item} />
+        <BookmarkWrapper key={item.id} bookmark={item} />
       ))}
       <FloatingButton onClick={modal.toggle}>
         <PlusIcon className="scale-150" />
       </FloatingButton>
-      <Modal {...modal}>HELLO</Modal>
+      <Modal {...modal}>
+        <BookmarkForm onSubmit={create} />
+      </Modal>
     </div>
   );
 };
