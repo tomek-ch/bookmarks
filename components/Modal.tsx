@@ -17,7 +17,7 @@ export const Modal = ({
       <>
         <div
           onClick={toggle}
-          className={`fixed inset-0 bg-black/70 w-full ${
+          className={`fixed inset-0 bg-black/70 w-full z-10 ${
             isExiting ? "animate-fade-out" : "animate-fade-in"
           }`}
           onAnimationEnd={({ animationName }) => {
@@ -28,7 +28,7 @@ export const Modal = ({
         />
         <div
           className="
-          fixed p-2 w-full max-w-md
+          fixed p-2 w-full max-w-md z-10
           top-1/2 left-1/2
           -translate-x-1/2 -translate-y-1/2
           "
