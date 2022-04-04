@@ -12,7 +12,7 @@ export const Modal = ({
   isExiting,
   finishExit,
 }: ModalProps) => {
-  if (isOpen || isExiting) {
+  if (isOpen) {
     return (
       <>
         <div
