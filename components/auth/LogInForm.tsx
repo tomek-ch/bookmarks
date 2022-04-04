@@ -7,6 +7,8 @@ import { InputField } from "../common/InputField";
 export const LogInForm = () => (
   <Formik
     initialValues={{ email: "", password: "" }}
+    validateOnBlur={false}
+    validateOnChange={false}
     validationSchema={object({
       email: string()
         .required("Please enter your email address")

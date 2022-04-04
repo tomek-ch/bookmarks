@@ -7,6 +7,8 @@ import { InputField } from "../common/InputField";
 export const RegisterForm = () => (
   <Formik
     initialValues={{ name: "", email: "", password: "" }}
+    validateOnBlur={false}
+    validateOnChange={false}
     validationSchema={object({
       name: string().required("Please enter your name"),
       email: string()
