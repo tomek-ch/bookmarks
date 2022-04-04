@@ -14,15 +14,19 @@ export const BookmarkForm = ({
   cancel,
 }: BookmarkFormProps) => {
   return (
-    <Formik initialValues={initialData} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialData}
+      onSubmit={(data, { setSubmitting }) => {
+        onSubmit(data);
+        setSubmitting(false);
+      }}
+    >
       {({ isSubmitting }) => (
         <Form className="flex flex-col gap-3 items-start">
           <InputField name="name" label="Bookmark name" autoFocus />
           <InputField name="url" label="Url" />
           <div className="flex w-full justify-end gap-2">
-            <Button onClick={cancel} disabled={isSubmitting}>
-              Cancel
-            </Button>
+            <Button onClick={cancel}>Cancel</Button>
             <Button type="submit" variant="primary" disabled={isSubmitting}>
               Save
             </Button>
