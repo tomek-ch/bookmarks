@@ -24,7 +24,7 @@ export const RegisterForm = () => (
         <InputField name="name" label="Name" autoFocus />
         <InputField type="email" name="email" label="Email" />
         <InputField type="password" name="password" label="Password" />
-        <Button variant="primary" disabled={isSubmitting}>
+        <Button type="submit" variant="primary" disabled={isSubmitting}>
           Sign up
         </Button>
       </Form>

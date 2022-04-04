@@ -20,10 +20,10 @@ export const BookmarkForm = ({
           <InputField name="name" label="Bookmark name" autoFocus />
           <InputField name="url" label="Url" />
           <div className="flex w-full justify-end gap-2">
-            <Button type="button" onClick={cancel} disabled={isSubmitting}>
+            <Button onClick={cancel} disabled={isSubmitting}>
               Cancel
             </Button>
-            <Button variant="primary" disabled={isSubmitting}>
+            <Button type="submit" variant="primary" disabled={isSubmitting}>
               Save
             </Button>
           </div>
