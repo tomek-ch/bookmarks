@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 
 interface InputFieldProps {
-  type?: string;
+  type?: "text" | "email" | "password" | "url";
   autoFocus?: boolean;
   name: string;
   label: string;
