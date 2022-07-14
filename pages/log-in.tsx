@@ -2,7 +2,7 @@ import { LogInForm } from "../components/auth/LogInForm";
 import { InlineLink } from "../components/common/InlineLink";
 import { Meta } from "../components/common/Meta";
 import { useMutation, useQueryClient } from "react-query";
-import { logIn, validate } from "../api/api";
+import { logIn } from "../api/api";
 import { useGuestRoute } from "../hooks/useGuestRoute";
 
 const LogIn = () => {
