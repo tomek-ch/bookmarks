@@ -1,4 +1,5 @@
 import { LogInDto } from "../types/dto/LogInDto";
+import { RegisterDto } from "../types/dto/RegisterDto";
 import { User } from "../types/User";
 import { isClient } from "../utils/isClient";
 import { axios } from "./axios";
@@ -45,4 +46,13 @@ export const validate = async () => {
   } catch {
     return null;
   }
+};
+
+export const register = async (payload: RegisterDto) => {
+  const { data } = await axios.post<{ access_token: string }>(
+    "auth/signup",
+    payload
+  );
+  updateToken(data.access_token);
+  return data;
 };
