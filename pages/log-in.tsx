@@ -8,10 +8,10 @@ import { useGuestRoute } from "../hooks/useGuestRoute";
 const LogIn = () => {
   useGuestRoute();
   const queryClient = useQueryClient();
+
   const { mutate, isLoading, error } = useMutation(logIn, {
     onSuccess() {
-      queryClient.invalidateQueries(["currentUser"]);
-      queryClient.fetchQuery("currentUser");
+      queryClient.invalidateQueries("currentUser");
     },
   });
 
