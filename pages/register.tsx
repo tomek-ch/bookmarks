@@ -18,7 +18,7 @@ const Register = () => {
   return (
     <div className="max-w-xs mx-auto">
       <Meta title="Sign up" />
-      <h1 className="text-xl mb-3">Sign up</h1>
+      <h1 className="text-xl mb-3 mt-10">Sign up</h1>
       <RegisterForm
         onSubmit={mutate}
         isLoading={isLoading}

@@ -18,7 +18,7 @@ const LogIn = () => {
   return (
     <div className="max-w-xs mx-auto">
       <Meta title="Sign in" />
-      <h1 className="text-xl mb-3">Sign in</h1>
+      <h1 className="text-xl mb-3 my-10">Sign in</h1>
       <LogInForm
         onSubmit={mutate}
         isLoading={isLoading}
