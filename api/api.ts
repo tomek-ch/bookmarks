@@ -5,6 +5,10 @@ import { axios } from "./axios";
 
 export let token: string | null = null;
 
+if (isClient) {
+  token = localStorage.getItem("token");
+}
+
 export const updateToken = (newToken: string | null) => {
   token = newToken;
   if (token) {
