@@ -21,6 +21,10 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (!error.response) {
+      return Promise.reject("Request failed");
+    }
+
     const { statusCode, message } = error.response.data;
 
     if ([400, 403].includes(statusCode)) {
