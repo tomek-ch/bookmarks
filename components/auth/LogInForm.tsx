@@ -1,10 +1,18 @@
 import { Form, Formik } from "formik";
 import React from "react";
 import { object, string } from "yup";
+import { LogInDto } from "../../types/dto/LogInDto";
 import { Button } from "../common/buttons/Button";
+import { ErrorAlert } from "../common/ErrorAlert";
 import { InputField } from "../common/InputField";
 
-export const LogInForm = () => (
+interface LogInFormProps {
+  onSubmit: (data: LogInDto) => void;
+  isLoading: boolean;
+  error: string;
+}
+
+export const LogInForm = ({ onSubmit, isLoading, error }: LogInFormProps) => (
   <Formik
     initialValues={{ email: "", password: "" }}
     validateOnBlur={false}
@@ -15,19 +23,15 @@ export const LogInForm = () => (
         .email("Invalid email address"),
       password: string().required("Please provide a password"),
     })}
-    onSubmit={(values, { setSubmitting }) => {
-      console.log(values);
-      setSubmitting(false);
-    }}
+    onSubmit={onSubmit}
   >
-    {({ isSubmitting }) => (
-      <Form noValidate className="flex flex-col gap-3 items-start">
-        <InputField type="email" name="email" label="Email" autoFocus />
-        <InputField type="password" name="password" label="Password" />
-        <Button type="submit" variant="primary" disabled={isSubmitting}>
-          Sign in
-        </Button>
-      </Form>
-    )}
+    <Form noValidate className="flex flex-col gap-3 items-start">
+      <InputField type="email" name="email" label="Email" autoFocus />
+      <InputField type="password" name="password" label="Password" />
+      <Button type="submit" variant="primary" disabled={isLoading}>
+        Sign in
+      </Button>
+      <ErrorAlert>{error}</ErrorAlert>
+    </Form>
   </Formik>
 );

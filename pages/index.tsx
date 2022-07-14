@@ -5,6 +5,7 @@ import { FloatingButton } from "../components/common/buttons/FloatingButton";
 import { PlusIcon } from "../components/icons/PlusIcon";
 import { Modal } from "../components/Modal";
 import { useModal } from "../hooks/useModal";
+import { useProtectedRoute } from "../hooks/useProtectedRoute";
 import { Bookmark } from "../types/Bookmark";
 
 interface HomeProps {
@@ -14,6 +15,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ bookmarks }) => {
   const modal = useModal();
   const create = () => {};
+  useProtectedRoute();
   return (
     <div className="pb-8">
       <h1 className="text-xl mb-4">Your bookmarks:</h1>

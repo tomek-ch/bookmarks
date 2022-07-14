@@ -1,18 +1,30 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Header } from "../components/layout/Header";
-import { AuthContextProvider } from "../context/AuthContext";
 import { Meta } from "../components/common/Meta";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { AuthWrapper } from "../components/common/AuthWrapper";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AuthContextProvider>
+    <QueryClientProvider client={queryClient}>
       <Meta />
-      <div className="px-4 max-w-md mx-auto">
-        <Header />
-        <Component {...pageProps} />
-      </div>
-    </AuthContextProvider>
+      <AuthWrapper>
+        <div className="px-4 max-w-md mx-auto">
+          <Header />
+          <Component {...pageProps} />
+        </div>
+      </AuthWrapper>
+    </QueryClientProvider>
   );
 }
 

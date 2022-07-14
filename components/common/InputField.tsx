@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from "formik";
+import { ErrorAlert } from "./ErrorAlert";
 
 interface InputFieldProps {
   type?: "text" | "email" | "password" | "url";
@@ -28,7 +29,9 @@ export const InputField = ({
           `}
         />
       </label>
-      <ErrorMessage name={name} component="div" className="text-red-600 mt-1" />
+      <ErrorAlert>
+        <ErrorMessage name={name} />
+      </ErrorAlert>
     </div>
   );
 };
