@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = ({ bookmarks }) => {
   useProtectedRoute();
   return (
     <div className="pb-8">
-      <h1 className="text-xl mb-4">Your bookmarks:</h1>
+      <h1 className="text-xl my-5">Your bookmarks:</h1>
       {bookmarks.map((item) => (
         <BookmarkWrapper key={item.id} bookmark={item} />
       ))}
