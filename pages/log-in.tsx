@@ -11,7 +11,7 @@ const LogIn = () => {
 
   const { mutate, isLoading, error } = useMutation(logIn, {
     onSuccess() {
-      queryClient.invalidateQueries("currentUser");
+      queryClient.refetchQueries("currentUser");
     },
   });
 
