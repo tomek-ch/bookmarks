@@ -1,3 +1,4 @@
+import { Bookmark } from "../types/Bookmark";
 import { LogInDto } from "../types/dto/LogInDto";
 import { RegisterDto } from "../types/dto/RegisterDto";
 import { User } from "../types/User";
@@ -54,5 +55,10 @@ export const register = async (payload: RegisterDto) => {
     payload
   );
   updateToken(data.access_token);
+  return data;
+};
+
+export const getBookmarks = async () => {
+  const { data } = await axios.get<Bookmark[]>("bookmarks");
   return data;
 };
