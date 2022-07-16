@@ -4,6 +4,7 @@ import { Bookmark } from "../../types/Bookmark";
 import { User } from "../../types/User";
 import { Alert } from "../common/Alert";
 import { BookmarkList } from "./BookmarkList";
+import { BookmarkListSkeleton } from "./BookmarkListSkeleton";
 
 export const Bookmarks = () => {
   const { data: user } = useQuery<User | null>("currentUser");
@@ -16,7 +17,7 @@ export const Bookmarks = () => {
   );
 
   if (isLoading) {
-    return <>Loading...</>;
+    return <BookmarkListSkeleton />;
   }
 
   if (data) {
