@@ -1,17 +1,11 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+import { ButtonOrLink } from "./buttons/ButtonOrLink";
+import { ButtonOrLinkProps } from "./buttons/ButtonOrLinkProps";
 
-interface InlineLinkProps {
-  children: ReactNode;
-  to: string;
-}
-
-export const InlineLink = ({ to, children }: InlineLinkProps) => {
+export const InlineLink = (props: ButtonOrLinkProps) => {
   return (
-    <Link href={to}>
-      <a className="inline-block text-blue-600 hover:text-blue-700 active:scale-95 transition-all">
-        {children}
-      </a>
-    </Link>
+    <ButtonOrLink
+      className="inline-block text-blue-600 hover:text-blue-700 active:scale-95 transition-all"
+      {...props}
+    />
   );
 };

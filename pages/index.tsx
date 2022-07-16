@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <PrivateRoute>
       <div className="pb-8">
-        <Bookmarks />
+        <Bookmarks openModal={modal.toggle} />
         <FloatingButton onClick={modal.toggle}>
           <PlusIcon className="scale-150" />
         </FloatingButton>

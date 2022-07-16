@@ -6,7 +6,11 @@ import { Alert } from "../common/Alert";
 import { BookmarkList } from "./BookmarkList";
 import { BookmarkListSkeleton } from "./BookmarkListSkeleton";
 
-export const Bookmarks = () => {
+interface BookmarksProps {
+  openModal: () => void;
+}
+
+export const Bookmarks = ({ openModal }: BookmarksProps) => {
   const { data: user } = useQuery<User | null>("currentUser");
   const { data, isLoading } = useQuery<Bookmark[]>("bookmarks", getBookmarks, {
     enabled: !!user,
@@ -17,7 +21,7 @@ export const Bookmarks = () => {
   }
 
   if (data) {
-    return <BookmarkList bookmarks={data} />;
+    return <BookmarkList openModal={openModal} bookmarks={data} />;
   }
 
   return <Alert variant="danger">Error fetching bookmarks</Alert>;

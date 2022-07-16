@@ -1,12 +1,14 @@
 import { Bookmark } from "../../types/Bookmark";
 import { Alert } from "../common/Alert";
+import { InlineLink } from "../common/InlineLink";
 import { BookmarkWrapper } from "./BookmarkWrapper";
 
 interface BookmarkListProps {
   bookmarks: Bookmark[];
+  openModal: () => void;
 }
 
-export const BookmarkList = ({ bookmarks }: BookmarkListProps) => {
+export const BookmarkList = ({ bookmarks, openModal }: BookmarkListProps) => {
   if (bookmarks.length) {
     return (
       <>
@@ -18,5 +20,9 @@ export const BookmarkList = ({ bookmarks }: BookmarkListProps) => {
     );
   }
 
-  return <Alert>No bookmarks</Alert>;
+  return (
+    <Alert>
+      No bookmarks. <InlineLink onClick={openModal}>Create one</InlineLink>
+    </Alert>
+  );
 };
