@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookMarkIcon } from "../icons/BookMarkIcon";
+import { Logo } from "../common/Logo";
 import { UserNav } from "../layout/UserNav";
 
 export const Header = () => {
@@ -7,10 +7,7 @@ export const Header = () => {
     <header className="py-3 items-center flex justify-between">
       <Link href="/">
         <a className="block hover:text-blue-600 active:scale-95 transition-all">
-          <h1 className="flex gap-1 items-center">
-            <BookMarkIcon />
-            Bookmarks
-          </h1>
+          <Logo />
         </a>
       </Link>
       <UserNav />
