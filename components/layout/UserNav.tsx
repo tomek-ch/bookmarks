@@ -1,6 +1,6 @@
 import { Button } from "../common/buttons/Button";
 import { useQuery, useQueryClient } from "react-query";
-import { updateToken, validate } from "../../api/api";
+import { updateToken } from "../../api/api";
 import { User } from "../../types/User";
 
 export const UserNav = () => {
