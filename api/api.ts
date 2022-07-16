@@ -1,4 +1,5 @@
 import { Bookmark } from "../types/Bookmark";
+import { BookmarkDto } from "../types/dto/BookmarkDto";
 import { LogInDto } from "../types/dto/LogInDto";
 import { RegisterDto } from "../types/dto/RegisterDto";
 import { User } from "../types/User";
@@ -60,5 +61,10 @@ export const register = async (payload: RegisterDto) => {
 
 export const getBookmarks = async () => {
   const { data } = await axios.get<Bookmark[]>("bookmarks");
+  return data;
+};
+
+export const createBookmark = async (payload: BookmarkDto) => {
+  const { data } = await axios.post<Bookmark>("bookmarks", payload);
   return data;
 };

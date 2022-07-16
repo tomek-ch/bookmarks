@@ -21,6 +21,7 @@ export const BookmarkWrapper = ({ bookmark }: BookmarkWrapperProps) => {
           cancel={modal.toggle}
           initialData={bookmark}
           onSubmit={update}
+          isLoading={false}
         />
       </Modal>
     </>

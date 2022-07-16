@@ -8,13 +8,9 @@ import { BookmarkListSkeleton } from "./BookmarkListSkeleton";
 
 export const Bookmarks = () => {
   const { data: user } = useQuery<User | null>("currentUser");
-  const { data, isLoading } = useQuery<Bookmark[]>(
-    ["bookmarks", user?.id],
-    getBookmarks,
-    {
-      enabled: !!user,
-    }
-  );
+  const { data, isLoading } = useQuery<Bookmark[]>("bookmarks", getBookmarks, {
+    enabled: !!user,
+  });
 
   if (isLoading) {
     return <BookmarkListSkeleton />;

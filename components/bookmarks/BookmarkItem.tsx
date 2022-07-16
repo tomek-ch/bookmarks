@@ -8,7 +8,7 @@ interface BookmarkItemProps {
 }
 
 export const BookmarkItem = ({
-  bookmark: { name, url },
+  bookmark: { link, title },
   edit,
   remove,
 }: BookmarkItemProps) => {
@@ -16,11 +16,11 @@ export const BookmarkItem = ({
     <div className="flex shadow-md rounded-md mb-4 items-center">
       <a
         className="grow p-4 hover:text-blue-600 transition-all"
-        href={url}
+        href={link}
         target="_blank"
         rel="noopener"
       >
-        {name}
+        {title}
       </a>
       <div className="mr-4 flex gap-2">
         <Button onClick={edit} variant="primary">
