@@ -1,4 +1,5 @@
 import { Bookmark } from "../../types/Bookmark";
+import { Alert } from "../common/Alert";
 import { BookmarkWrapper } from "./BookmarkWrapper";
 
 interface BookmarkListProps {
@@ -17,5 +18,5 @@ export const BookmarkList = ({ bookmarks }: BookmarkListProps) => {
     );
   }
 
-  return <div>No bookmarks</div>;
+  return <Alert>No bookmarks</Alert>;
 };

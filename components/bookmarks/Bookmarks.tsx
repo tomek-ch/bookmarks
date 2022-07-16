@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { getBookmarks } from "../../api/api";
 import { Bookmark } from "../../types/Bookmark";
 import { User } from "../../types/User";
+import { Alert } from "../common/Alert";
 import { BookmarkList } from "./BookmarkList";
 
 export const Bookmarks = () => {
@@ -15,12 +16,12 @@ export const Bookmarks = () => {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <>Loading...</>;
   }
 
   if (data) {
     return <BookmarkList bookmarks={data} />;
   }
 
-  return <div>Error fetching bookmarks</div>;
+  return <Alert variant="danger">Error fetching bookmarks</Alert>;
 };
