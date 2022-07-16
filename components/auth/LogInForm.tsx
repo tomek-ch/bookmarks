@@ -3,7 +3,7 @@ import React from "react";
 import { object, string } from "yup";
 import { LogInDto } from "../../types/dto/LogInDto";
 import { Button } from "../common/buttons/Button";
-import { ErrorAlert } from "../common/ErrorAlert";
+import { InlineError } from "../common/InlineError";
 import { InputField } from "../common/InputField";
 
 interface LogInFormProps {
@@ -31,7 +31,7 @@ export const LogInForm = ({ onSubmit, isLoading, error }: LogInFormProps) => (
       <Button type="submit" variant="primary" disabled={isLoading}>
         Sign in
       </Button>
-      <ErrorAlert>{error}</ErrorAlert>
+      <InlineError>{error}</InlineError>
     </Form>
   </Formik>
 );

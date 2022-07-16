@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-interface ErrorAlertProps {
+interface InlineErrorProps {
   children: ReactNode;
 }
 
-export const ErrorAlert = ({ children }: ErrorAlertProps) => {
+export const InlineError = ({ children }: InlineErrorProps) => {
   return <div className="text-red-600 mt-1">{children}</div>;
 };

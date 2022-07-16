@@ -4,7 +4,7 @@ import { object, string } from "yup";
 import { Button } from "../common/buttons/Button";
 import { InputField } from "../common/InputField";
 import { RegisterDto } from "../../types/dto/RegisterDto";
-import { ErrorAlert } from "../common/ErrorAlert";
+import { InlineError } from "../common/InlineError";
 
 interface RegisterFormProps {
   onSubmit: (data: RegisterDto) => void;
@@ -38,7 +38,7 @@ export const RegisterForm = ({
         <Button type="submit" variant="primary" disabled={isLoading}>
           Sign up
         </Button>
-        <ErrorAlert>{error}</ErrorAlert>
+        <InlineError>{error}</InlineError>
       </Form>
     )}
   </Formik>

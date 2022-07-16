@@ -1,5 +1,5 @@
 import { ErrorMessage, Field } from "formik";
-import { ErrorAlert } from "./ErrorAlert";
+import { InlineError } from "./InlineError";
 
 interface InputFieldProps {
   type?: "text" | "email" | "password" | "url";
@@ -29,9 +29,9 @@ export const InputField = ({
           `}
         />
       </label>
-      <ErrorAlert>
+      <InlineError>
         <ErrorMessage name={name} />
-      </ErrorAlert>
+      </InlineError>
     </div>
   );
 };
