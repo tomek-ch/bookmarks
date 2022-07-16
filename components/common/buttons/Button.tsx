@@ -1,14 +1,15 @@
 import { ButtonOrLink } from "./ButtonOrLink";
 import { ButtonOrLinkProps } from "./ButtonOrLinkProps";
 
+type Variant = keyof typeof styles;
+
 type ButtonProps = ButtonOrLinkProps & {
-  variant?: "primary" | "secondary" | "danger";
+  variant?: Variant;
 };
 
 const styles = {
   primary: "bg-blue-500 text-white hover:bg-blue-600",
   secondary: "border-solid border-[1px] border-gray-300 hover:border-gray-400",
-  danger: "",
 } as const;
 
 export const Button = ({
