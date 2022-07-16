@@ -10,6 +10,7 @@ export const UserNav = () => {
   const signOut = () => {
     updateToken(null);
     queryClient.setQueryData("currentUser", null);
+    queryClient.invalidateQueries("bookmarks");
   };
 
   if (user.data) {
