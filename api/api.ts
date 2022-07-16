@@ -72,3 +72,8 @@ export const createBookmark = async (payload: BookmarkDto) => {
 export const removeBookmark = (id: number) => {
   return axios.delete(`bookmarks/${id}`);
 };
+
+export const updateBookmark = async (id: number, payload: BookmarkDto) => {
+  const { data } = await axios.patch<Bookmark>(`bookmarks/${id}`, payload);
+  return data;
+};
