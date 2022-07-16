@@ -31,6 +31,7 @@ export const BookmarkForm = ({
             "Please provide a url in the following format: https://example.com"
           ),
       })}
+      validateOnBlur={false}
     >
       {() => (
         <Form className="flex flex-col gap-3 items-start">
