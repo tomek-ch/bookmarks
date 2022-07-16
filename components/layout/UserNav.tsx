@@ -4,7 +4,7 @@ import { updateToken, validate } from "../../api/api";
 import { User } from "../../types/User";
 
 export const UserNav = () => {
-  const user = useQuery<User>("currentUser", { retry: false });
+  const user = useQuery<User>("currentUser");
   const queryClient = useQueryClient();
 
   const signOut = () => {
